@@ -7,10 +7,10 @@
  * @return PDO
  */
 function getDatabaseConnection() {
-    $host = 'update-me';      // Database host (change to your RDS endpoint in production)
+    $host = 'update-me-host';      // Database host (change to your RDS endpoint in production)
     $db_name = 'hello_world'; // Database name
-    $username = 'update-me';       // Database username
-    $password = 'update-me';           // Database password
+    $username = 'update-me-username';       // Database username
+    $password = 'update-me-password';           // Database password
     
     $dsn = "mysql:host=$host;dbname=$db_name;charset=utf8mb4";
     $options = [
