@@ -78,7 +78,6 @@ three-tier-architecture-aws/
 
 3. **Frontend Setup**:
    - Copy the contents of the `frontend` directory to your web server
-   - Access the application through `http://localhost/`
 
 ## Development
 
