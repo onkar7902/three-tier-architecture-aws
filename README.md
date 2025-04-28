@@ -56,7 +56,9 @@ three-tier-architecture-aws/
 │   └── database_setup.sql    # SQL schema and initial data
 │
 └── infrastructure/           # AWS infrastructure configurations
-    ├── nginx-userdata.sh     # User data script for NGINX instances
+    ├── frontend_server.md     # Frontend server configurations
+    ├── backend_server.md     # Backend server configurations
+    ├── nginx_config     # Nginx server configurations
 ```
 
 ## Local Setup
