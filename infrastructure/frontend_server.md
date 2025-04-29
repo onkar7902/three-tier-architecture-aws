@@ -5,6 +5,7 @@
 sudo dnf install nginx -y
 sudo dnf install git -y
 ```
+Replace the server block in /etc/nginx/nginx.conf with the content from the nginx_config file.
 
 ## Add the following EC2 instance userdata to the Launch Template:
 
