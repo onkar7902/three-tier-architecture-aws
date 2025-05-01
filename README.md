@@ -72,16 +72,47 @@ three-tier-architecture-aws/
 
 ### Steps
 
-1. **Database Setup**:
-   - Create a MySQL database named `hello_world`
-   - Import `database/database_setup.sql` to create the schema and initial data
-
-2. **Backend Setup**:
-   - Copy the contents of the `backend` directory to your app server
-   - Update database connection details in `api/db_connection.php`
-
-3. **Frontend Setup**:
-   - Copy the contents of the `frontend` directory to your web server
+1. Create VPC
+2. Create subnets
+    1. Web Public 1a, 1b, 1c
+    2. Web Private 1a, 1b, 1c
+    3. App Private 1a, 1b, 1c
+    4. Db Private 1a, 1b, 1c
+3. Create route tables
+    1. Web Public
+    2. Web Private 1a, 1b, 1c
+    3. App Private 1a, 1b, 1c
+    4. Db Private 1a, 1b, 1c
+4. Associate route tables with subnet
+5. Create internet Gateway (IGW)
+    1. Attach it to VPC
+6. Create NAT gateway (NATGW) in web public subnet
+7. Add IGW and NAT routes in route table
+    1. Public -> IGW
+    2. Private -> NAT
+8. Create security groups
+    1. Frontend ALB
+    2. Frontend Servers
+    3. Backend ALB
+    4. Backend Servers
+    5. Db Private Servers
+9. Create database subnet group
+10. Create database server
+11. Create Frontend ALB
+    1. Create Frontend ALB target group 
+12. Create Backend ALB
+    1. Create Backend ALB target group
+13. Create Frontend Server AMI
+    1. Install Nginx
+    2. Install Git
+14. Create Backend Server AMI
+    1. Install PHP, MySQL, Apache
+    2. Install Git
+    3. Run the database script
+15. Create the Launch Template for Frontend Server
+16. Create the Launch Template for Backend Server
+17. Create the Auto Scaling Group for Frontend Server
+18. Create the Auto Scaling Group for Backend Server
 
 ## Development
 
